@@ -97,7 +97,7 @@ function AdminDashboard() {
         alert(result.message || 'Không thể xử lý yêu cầu');
       }
     } catch (error) {
-      alert('Có lỗi xảy ra khi xử lý yêu cầu');
+      alert('Có lỗi xảy ra khi xử lý yêu cầu : ' + error);
     } finally {
       setProcessingEnrollment(null);
     }
@@ -232,7 +232,7 @@ function AdminDashboard() {
                               <MessageSquare className="h-4 w-4 text-blue-600 mt-0.5" />
                               <div>
                                 <p className="text-sm font-medium text-blue-900">Lời nhắn từ học viên:</p>
-                                <p className="text-sm text-blue-800 italic">"{enrollment.message}"</p>
+                                <p className="text-sm text-blue-800 italic">&quot;{enrollment.message}&quot;</p>
                               </div>
                             </div>
                           </div>

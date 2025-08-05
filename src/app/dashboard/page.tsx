@@ -199,7 +199,7 @@ function StudentDashboard() {
                         </p>
                         {enrollment.message && (
                           <p className="text-sm text-gray-600 mt-2 italic">
-                            "{enrollment.message}"
+                            &quot;{enrollment.message}&quot;
                           </p>
                         )}
                       </div>

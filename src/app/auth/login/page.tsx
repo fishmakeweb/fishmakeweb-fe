@@ -65,7 +65,7 @@ export default function LoginPage() {
       }
     } catch (error) {
       setError("root", {
-        message: "Có lỗi xảy ra. Vui lòng thử lại sau.",
+        message: "Có lỗi xảy ra. Vui lòng thử lại sau." + error,
       });
     } finally {
       setIsLoading(false);
