@@ -1,103 +1,171 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { BookOpen, Code, Play, Users } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      {/* Hero Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              Learn Programming
+              <span className="text-blue-600"> Step by Step</span>
+            </h1>
+            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              Master HTML, CSS, and more through interactive lessons, hands-on exercises, 
+              and real-time code evaluation. Start your programming journey today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg">
+                <Link href="/programs">
+                  <Play className="mr-2 h-5 w-5" />
+                  Start Learning
+                </Link>
+              </Button>
+              <Button variant="outline" size="lg">
+                <BookOpen className="mr-2 h-5 w-5" />
+                View Programs
+              </Button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Why Choose FishMakeWeb?
+            </h2>
+            <p className="text-lg text-gray-600">
+              Our platform offers a comprehensive learning experience for aspiring programmers
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card>
+              <CardHeader>
+                <Code className="h-10 w-10 text-blue-600 mb-4" />
+                <CardTitle>Interactive Code Editor</CardTitle>
+                <CardDescription>
+                  Write and test your code in real-time with our built-in Monaco editor
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <BookOpen className="h-10 w-10 text-green-600 mb-4" />
+                <CardTitle>Structured Lessons</CardTitle>
+                <CardDescription>
+                  Learn through carefully crafted lessons with theory, examples, and practice
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <Users className="h-10 w-10 text-purple-600 mb-4" />
+                <CardTitle>Instant Feedback</CardTitle>
+                <CardDescription>
+                  Get immediate results and feedback on your code through automated testing
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Available Programs Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Available Programs
+            </h2>
+            <p className="text-lg text-gray-600">
+              Start with our foundational programs and build your skills progressively
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Code className="mr-2 h-5 w-5 text-orange-600" />
+                  Learning HTML & CSS
+                </CardTitle>
+                <CardDescription>
+                  Master the fundamentals of web development with HTML structure and CSS styling
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2 text-sm text-gray-600 mb-4">
+                  <p>• Introduction to HTML</p>
+                  <p>• CSS Basics & Styling</p>
+                  <p>• Box Model & Layout</p>
+                  <p>• Responsive Design</p>
+                </div>
+                <Button asChild className="w-full">
+                  <Link href="/programs/html-css">
+                    Start Program
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="opacity-60">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Code className="mr-2 h-5 w-5 text-yellow-600" />
+                  JavaScript Fundamentals
+                </CardTitle>
+                <CardDescription>
+                  Coming soon - Learn the language that powers the web
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2 text-sm text-gray-600 mb-4">
+                  <p>• Variables & Data Types</p>
+                  <p>• Functions & Scope</p>
+                  <p>• DOM Manipulation</p>
+                  <p>• Event Handling</p>
+                </div>
+                <Button disabled className="w-full">
+                  Coming Soon
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="opacity-60">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Code className="mr-2 h-5 w-5 text-blue-600" />
+                  React Basics
+                </CardTitle>
+                <CardDescription>
+                  Coming soon - Build modern web applications with React
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2 text-sm text-gray-600 mb-4">
+                  <p>• Components & JSX</p>
+                  <p>• State & Props</p>
+                  <p>• Event Handling</p>
+                  <p>• Hooks & Effects</p>
+                </div>
+                <Button disabled className="w-full">
+                  Coming Soon
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -32,6 +32,58 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# secrets and sensitive files
+secrets/
+private/
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+config/secrets.json
+config/private.json
+
+# API keys and tokens
+api-keys.json
+tokens.json
+credentials.json
+
+# database
+*.db
+*.sqlite
+*.sqlite3
+
+# logs
+*.log
+logs/
+
+# temporary files
+*.tmp
+*.temp
+.cache/
+
+# IDE and editor files
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
 # vercel
 .vercel
